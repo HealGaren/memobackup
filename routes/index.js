@@ -16,12 +16,12 @@ router.post('/backup', (req, res) => {
 });
 
 router.get('/restore', (req, res) => {
-    const token = req.body.token;
+    const token = req.query.token;
     const memos = dataMap[token];
     try {
-    res.json({ memos: JSON.parse(memos) });
+        res.json({ memos: JSON.parse(memos) });
     }
-    catch (e) { res.json(dataMap);}
+    catch (e) { res.json(e, dataMap);}
 });
 
 module.exports = router;
