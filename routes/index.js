@@ -12,7 +12,7 @@ router.post('/backup', (req, res) => {
     const memos = req.body.memos;
     const token = req.body.token;
     dataMap[token] = memos;
-    res.json({ message: "저장 성공" });
+    res.json({ message: JSON.stringify(dataMap) });
 });
 
 router.get('/restore', (req, res) => {
