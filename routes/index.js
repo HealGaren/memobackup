@@ -18,7 +18,10 @@ router.post('/backup', (req, res) => {
 router.get('/restore', (req, res) => {
     const token = req.body.token;
     const memos = dataMap[token];
+    try {
     res.json({ memos: JSON.parse(memos) });
+    }
+    catch (e) { res.json(dataMap);}
 });
 
 module.exports = router;
