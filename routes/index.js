@@ -12,7 +12,7 @@ router.post('/backup', (req, res) => {
     const memos = req.body.memos;
     const token = req.body.token;
     dataMap[token] = memos;
-    res.json({ message: JSON.stringify(dataMap) });
+    res.json({ message: JSON.stringify(req.body) });
 });
 
 router.get('/restore', (req, res) => {
