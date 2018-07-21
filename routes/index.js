@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-
+let token = 0;
 const dataMap = {};
 
 router.post('/createToken', (req, res) => {
