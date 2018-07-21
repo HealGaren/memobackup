@@ -8,14 +8,14 @@ router.post('/createToken', (req, res) => {
     res.json({ token: "token-" + token });
 });
 
-router.post('backup', (req, res) => {
+router.post('/backup', (req, res) => {
     const memos = req.body.memos;
     const token = req.body.token;
     dataMap[token] = memos;
     res.json({ message: "저장 성공" });
 });
 
-router.get('restore', (req, res) => {
+router.get('/restore', (req, res) => {
     const token = req.body.token;
     const memos = dataMap[token];
     res.json({ memos });
