@@ -27,7 +27,7 @@
 { "message": "성공적으로 생성되었습니다." }
 ```
 
-* POST /checkToken
+* GET /checkToken
 
 > Params
 
