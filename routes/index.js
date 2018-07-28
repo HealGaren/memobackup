@@ -12,7 +12,7 @@ router.get('/checkToken', (req, res) => {
     mongo.User.findById(token).exec().then(user => {
         if (!user) res.json({valid: false, message: '존재하지 않는 토큰입니다.'})
         else res.json({valid: true, message: '존재하는 토큰입니다.'});
-    })
+    }).catch(() => res.json({valid: true, message: '존재하는 토큰입니다.'}))
 });
 
 router.post('/backup', (req, res) => {
