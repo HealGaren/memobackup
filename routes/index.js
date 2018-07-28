@@ -18,7 +18,7 @@ router.get('/checkToken', (req, res) => {
 router.post('/backup', (req, res) => {
     const memos = req.body.memos;
     const token = req.body.token;
-    if (Array.isArray(memos)) {
+    if (!Array.isArray(memos)) {
         res.status(400).json({ message: '요청의 memos 필드가 잘못되었습니다.'});
     }
     else mongo.User
